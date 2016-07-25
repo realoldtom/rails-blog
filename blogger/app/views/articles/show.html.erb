@@ -6,6 +6,9 @@
   <% end %>
 </p>
 
+<% if @article.image.exists? %>
+	<p><%= image_tag @article.image.url %></p>
+<% end %>
 <p><%= @article.body %></p>
 
 
@@ -19,3 +22,4 @@
 <%= link_to "edit", edit_article_path(@article) %>
 
 <%# data: {confirm: "Really delete the article?"} WHERE DOES THIS CONFIRM GO?%>
+
